@@ -798,10 +798,12 @@ import class CR4Game extends CCommonGame
 					hud.HudConsoleMsg( GetLocStringByKeyExt(text) );
 				}
 			}
-			else
-			{
-				thePlayer.DisplayHudMessage( text );
-			}
+			// NoQuickSaveMessage++
+			// else
+			// {
+			// 	thePlayer.DisplayHudMessage( text );
+			// }
+			// NoQuickSaveMessage--
 		}
 		else if ( type == SGT_QuickSave || type == SGT_Manual )
 		{
