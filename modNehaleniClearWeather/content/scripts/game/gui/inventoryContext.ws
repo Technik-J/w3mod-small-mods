@@ -352,6 +352,12 @@ class W3InventoryGridContext extends W3InventoryItemContext
 							AddInputBinding("panel_button_hud_interaction_useitem", "enter-gamepad_A", IK_E, true);
 						}
 					}
+					// modNehaleniClearWeather++
+					else if (invComponentRef.GetItemName(currentItemId) == 'Illusion Medallion')
+					{
+						AddInputBinding("panel_button_hud_interaction_useitem", "enter-gamepad_A", IK_E, true);
+					}
+					// modNehaleniClearWeather--
 					else if ( invComponentRef.ItemHasTag(currentItemId, 'WeaponReapairKit') )
 					{
 						if ( GetWitcherPlayer().HasRepairAbleWaponEquiped() )
@@ -434,6 +440,13 @@ class W3InventoryGridContext extends W3InventoryItemContext
 					{
 						invMenuRef.OnRepairItem(currentItemId);
 					}
+					// modNehaleniClearWeather++
+					else if (invComponentRef.GetItemName(currentItemId) == 'Illusion Medallion')
+					{
+						RequestWeatherChangeTo('WT_Clear', 1, false);
+						theSound.SoundEvent("gui_character_synergy_effect");
+					}
+					// modNehaleniClearWeather--
 					else if (invComponentRef.ItemHasTag(currentItemId, 'SteelOil') || 
 						 invComponentRef.ItemHasTag(currentItemId, 'SilverOil'))
 					{
