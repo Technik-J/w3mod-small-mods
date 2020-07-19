@@ -416,7 +416,7 @@ class CExplorationCollisionManager
 		{
 			return true;
 		}
-		if( m_ExplorationO.m_InputO.IsModuleConsiderable() )
+		if( thePlayer.GetIsRunning() ) // modLessIndignantNPCs
 		{
 			return true;
 		}
