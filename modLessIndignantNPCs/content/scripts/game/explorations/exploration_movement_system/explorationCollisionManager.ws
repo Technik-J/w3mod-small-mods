@@ -50,7 +50,7 @@ class CExplorationCollisionManager
 	
 	private	editable	var	m_CanCollideWithStaticaB			: bool;		default	m_CanCollideWithStaticaB		= false;
 	private	editable	var	m_VisualReactionToPushB				: bool;		default	m_VisualReactionToPushB			= false;
-	private	editable	var	m_SpeedToCollideWihNPCsF			: float;	default	m_SpeedToCollideWihNPCsF		= 0.1f;
+	private	editable	var	m_SpeedToCollideWihNPCsF			: float;	default	m_SpeedToCollideWihNPCsF		= 3.0f; // modLessIndignantNPCs: Original value 0.1f
 	private editable	var m_TimeCollidingToStopF				: float;	default	m_TimeCollidingToStopF			= 0.2f;
 	private				var m_TimeCollidingCurF					: float;
 	private editable	var m_AcceptableZToBumpF				: float;	default	m_AcceptableZToBumpF			= 0.4f;
@@ -412,7 +412,7 @@ class CExplorationCollisionManager
 	private function CanNPCsCollide() : bool
 	{
 		
-		if( m_ExplorationO.GetStateCur() != 'Idle' && VecLengthSquared( m_ExplorationO.m_OwnerMAC.GetVelocity() ) >= m_SpeedToCollideWihNPCsF * m_SpeedToCollideWihNPCsF )
+		if( m_ExplorationO.GetStateCur() != 'Idle' && VecLengthSquared( m_ExplorationO.m_OwnerMAC.GetVelocity() ) >= m_SpeedToCollideWihNPCsF ) // modLessIndignantNPCs
 		{
 			return true;
 		}
